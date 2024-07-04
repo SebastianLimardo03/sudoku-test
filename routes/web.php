@@ -4,6 +4,12 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\SudokuController;
+
+
+Route::get('/api/sudoku/generate', [SudokuController::class, 'generate']);
+Route::post('/api/sudoku/validate', [SudokuController::class, 'validateBoard']);
+
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
